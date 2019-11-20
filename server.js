@@ -10,6 +10,8 @@ const {
 } = require('graphql');
 const app = express();
 
+// the authors and books arrays would typically be stored in a database, not this file
+
 const authors = [
     {id: 1, name: 'J. K. Rowling'},
     {id: 2, name: 'J. R. R. Tolkien'},
@@ -26,6 +28,11 @@ const books = [
     {id: 7, name: 'The Way of Shadows', authorId: 3},
     {id: 8, name: 'Beyond the Shadows', authorId: 3},
 ]
+
+// Start out by creating the different types of information you need to call
+// Each type should include a name, description, and fields
+// The name and description are very generic, while the fields will be specific to each individual thing
+// Within your fields, you can have resolvers, which is a function used to query other types of info
 
 const BookType = new GraphQLObjectType({
     name: 'Book',
